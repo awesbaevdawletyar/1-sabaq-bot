@@ -7,7 +7,7 @@ import logging
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5662286410:AAHL2aaw8RhcoeFNOt7ef67MwD8XheRG1fo'
+from config import API_TOKEN
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -22,11 +22,14 @@ async def salem(message: types.Message):
     """
     This handler will be called when user sends `/start` or `/help` command
     """
-    await message.answer("Salem Men exo botpan")
+    await message.answer("Assalawma a'leykum.Auesbaev Dawletyardin' botina xosh kelipsiz\n8a-oqiwshilarin salem")
 
 @dp.message_handler(commands='help')
 async def salem(message: types.Message):
     await message.answer("Sizge qanday jardem kerek?")
+@dp.message_handler(commands='tel')
+async def salem(message: types.Message):
+    await message.answer("Bizge usi nomerler arqali qon'iraw etin'\n+9989138143743")
 
 @dp.message_handler()
 async def echo(message: types.Message):
